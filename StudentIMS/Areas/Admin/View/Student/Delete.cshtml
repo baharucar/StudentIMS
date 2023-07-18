@@ -1,0 +1,33 @@
+﻿@model Student
+
+<div class="container col-6 border shadow">
+
+    <div class="text-center">
+        <h1 class="display-5">Delete Student Record</h1>
+    </div>
+
+    <form method="post">
+
+        <input asp-for="Id" hidden />
+
+        <div class="form-floating py-2">
+            <input asp-for="Name" type="text" class="form-control" disabled/>
+            <label asp-for="Name" class="form-label"></label>
+        </div>
+        <div class="form-floating py-2">
+            <input asp-for="Surname" type="text" class="form-control" disabled/>
+            <label asp-for="Surname" class="form-label"></label>
+        </div>
+        <div class="form-floating py-2">
+            <input asp-for="StudentNumber" type="number" class="form-control" disabled/>
+            <label asp-for="StudentNumber" class="form-label"></label>
+        </div>
+        <div class="form-floating py-2">
+            <input asp-for="Age" type="number" class="form-control" disabled/>
+            <label asp-for="Age" class="form-label"></label>
+        </div>
+        <div class="py-2">
+            <button type="submit" class="btn btn-danger form-control">Delete</button>
+        </div>
+    </form>
+</div>

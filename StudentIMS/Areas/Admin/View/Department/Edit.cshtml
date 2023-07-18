@@ -1,0 +1,30 @@
+﻿@model Department
+
+<div class="container col-6 border shadow">
+
+    <div class="text-center">
+        <h1 class="display-5">Edit Department Record</h1>
+    </div>
+
+    <div asp-validation-summary="All" class="text-danger"></div>
+
+    <form method="post">
+
+        <input asp-for="Id" hidden/>
+        
+        <div class="form-floating py-2">
+            <input asp-for="Depart" type=""text" class="form-control" />
+            <label asp-for="Depart" class="form-label"></label>
+            <span asp-validation-for="Depart" class="text-danger"></span>
+        </div>
+        <div class="py-2">
+            <button type="submit" class="btn btn-primary form-control">Update</button>
+        </div>
+    </form>
+</div>
+
+@section Scripts{
+    @{
+        <partial name="_ValidationScriptsPartial"></partial>
+    }
+}

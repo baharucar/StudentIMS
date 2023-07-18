@@ -1,0 +1,56 @@
+﻿@using Models.Models
+@model StudentViewModel
+
+<div class="container col-6 border shadow">
+    
+    <div class="text-center">
+        <h1 class="display-5">Create New Student Record</h1>
+    </div>
+    
+    <div asp-validation-summary="All" class="text-danger"></div>
+
+    <form method="post" enctype="multipart/form-data">
+        <div class="form-floating py-2">
+            <input asp-for="Student.Name" type="text" class="form-control"/>
+            <label asp-for="Student.Name" class="form-label"></label>
+            <span asp-validation-for="Student.Name" class="text-danger"></span>            
+        </div>
+        <div class="form-floating py-2">
+            <input asp-for="Student.Surname" type="text" class="form-control" />
+            <label asp-for="Student.Surname" class="form-label"></label>
+            <span asp-validation-for="Student.Surname" class="text-danger"></span>
+        </div>
+        <div class="form-floating py-2">
+            <input asp-for="Student.StudentNumber" type="number" class="form-control" />
+            <label asp-for="Student.StudentNumber" class="form-label"></label>
+            <span asp-validation-for="Student.StudentNumber" class="text-danger"></span>
+        </div>
+        <div class="form-floating py-2">
+            <input asp-for="Student.Age" type="number" class="form-control" />
+            <label asp-for="Student.Age" class="form-label"></label>
+            <span asp-validation-for="Student.Age" class="text-danger"></span>
+        </div>
+        <div class="py-2">
+            <input asp-for="Student.Department" hidden/>
+            <select asp-for="Student.DepartmentId" asp-items="@Model.DepartmentList" class="form-select">
+                <option selected disabled>--- Select Department ---</option>            
+            </select>
+        </div>
+        <div class="py-2">
+            <input asp-for="Student.ImageUrl" hidden />
+            <label class="form-label">Select a Picture</label>
+            <input type="file" name="file" class="form-control" />            
+        </div>
+        <div class="py-2">
+            <button type="submit" class="btn btn-primary form-control">Create</button>
+        </div>
+    </form>
+</div>
+
+@section Scripts{
+    @{
+        <partial name="_ValidationScriptsPartial"></partial>
+    }
+}
+
+
